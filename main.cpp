@@ -17,7 +17,14 @@ int main() {
 		if (line.at(i) != ' ') // subscript operator is OVERLOADED for class string!
 			letterCount++;
 	}
+	size_t position = line.find_first_of("aeiou");
+	size_t vowelCount = 0;
+	while (position != string::npos){
+		vowelCount++;
+		position = line.find_first_of("aeiou", position + 1);
+	}
 	cout << "I counted " << letterCount << " letters" << endl;
+	cout << "I counted " << vowelCount << " vowels" << endl;
 
 
 	return 0;
