@@ -32,8 +32,27 @@ int main() {
 		cout << line.substr(start, position - start) << endl;
 		start = position + 1;
 		position = line.find(" ", start);
+		if (position == string::npos){
+			cout << line.substr(start) << endl;
+		}
 	}
-	cout << line.substr(start) << endl;
 
 	return 0;
 }
+/*
+             11
+   012345678901
+   This is red
+
+ start = 0
+ position = 4
+ This
+
+ start = 5
+ position = 7
+ is
+
+ start = 8
+ position = string::npos
+
+ */
