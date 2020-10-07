@@ -26,6 +26,14 @@ int main() {
 	cout << "I counted " << letterCount << " letters" << endl;
 	cout << "I counted " << vowelCount << " vowels" << endl;
 
+	position = line.find(" ");
+	size_t start = 0;
+	while (position != string::npos){
+		cout << line.substr(start, position - start) << endl;
+		start = position + 1;
+		position = line.find(" ", start);
+	}
+	cout << line.substr(start) << endl;
 
 	return 0;
 }
